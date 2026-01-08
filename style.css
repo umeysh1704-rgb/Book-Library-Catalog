@@ -1,0 +1,52 @@
+/* Layout Styling */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f5f9;
+}
+
+.app-container {
+    display: flex; /* This puts sidebar and content side-by-side */
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #1e293b;
+    color: white;
+    padding: 2rem;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Card Styling */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.book-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #3b82f6; /* Blue for available */
+}
+
+.book-card.borrowed {
+    border-left-color: #f59e0b; /* Orange for borrowed */
+    opacity: 0.8;
+}
+
+.btn-delete {
+    color: #ef4444;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
