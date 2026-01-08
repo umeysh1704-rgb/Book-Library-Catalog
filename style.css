@@ -1,85 +1,54 @@
-/* Sidebar - Staying the same Blue as before */
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f1f5f9;
 }
 
+/* This container keeps the Sidebar and Main Content side-by-side */
 .app-container {
-    display: flex;
+    display: flex; 
     min-height: 100vh;
 }
 
+/* Sidebar - Original Place */
 .sidebar {
     width: 300px;
-    background-color: #1e293b; /* That dark blue you liked */
+    background-color: #1e293b;
     color: white;
     padding: 2rem;
-    position: fixed; /* Keeps sidebar still while cards move */
-    height: 100vh;
+    /* We removed position:fixed so it doesn't overlap anymore */
 }
 
-/* Main Content - The "Moving" Side */
+/* Main Content - Original Place */
 .main-content {
     flex: 1;
-    margin-left: 300px; /* Space for the fixed sidebar */
     padding: 2rem;
 }
 
-.book-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
+/* Search Bar Area */
+.top-bar {
+    margin-bottom: 2rem;
 }
 
-/* The "Moving" Animation for Cards */
+#search-bar {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Grid for the books */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
 .book-card {
     background: white;
     padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-left: 6px solid #3b82f6;
-    
-    /* Animation settings */
-    transition: all 0.3s ease; /* Makes movement smooth */
-    animation: slideUp 0.5s ease forwards; /* Slid up when created */
-}
-
-/* Hover effect: Card moves up slightly when you point at it */
-.book-card:hover {
-    transform: translateY(-10px); 
-    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Buttons inside cards */
-button {
-    background: #3b82f6;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-button:hover {
-    background: #2563eb;
-}
-
-.btn-delete {
-    color: #ef4444;
-    font-size: 0.9rem;
-    cursor: pointer;
-    margin-left: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #3b82f6;
 }
