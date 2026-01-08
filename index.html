@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library Catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <h1>LibTrack</h1>
+            <div class="stats-card">
+                <h3>Statistics</h3>
+                <p>Total Books: <span id="total-books">0</span></p>
+                <p>Borrowed: <span id="borrowed-books">0</span></p>
+                <p>Reading Progress: <span id="progress-percent">0%</span></p>
+            </div>
+            
+            <form id="book-form">
+                <input type="text" id="title" placeholder="Book Title" required>
+                <input type="text" id="author" placeholder="Author" required>
+                <button type="submit" class="btn-primary">Add Book</button>
+            </form>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <input type="text" id="search-bar" placeholder="Search by title or author...">
+            </header>
+            
+            <div id="book-grid" class="book-grid">
+                </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
